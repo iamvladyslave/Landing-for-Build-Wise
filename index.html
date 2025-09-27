@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BuildWise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="header__logo-link">
+                <img src="assets/Logo.png" alt="BuildWise Logo" class="header__logo">
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="#main" class="header__nav-link header__nav-link--active">Main</a></li>
+                    <li><a href="#portfolio" class="header__nav-link">Portfolio</a></li>
+                    <li><a href="#price" class="header__nav-link">Price</a></li>
+                    <li><a href="#certifications" class="header__nav-link">Certifications</a></li>
+                    <li><a href="#contacts" class="header__nav-link">Contacts</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+447755555764" class="btn btn--header">
+                (+44) 7755-555-764
+                <span class="material-symbols-outlined">call</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="main" class="hero">
+            <div class="container hero__content">
+                <div class="hero__text">
+                    <h1>Construction services</h1>
+                    <p>From residential renovations to large-scale commercial projects — we bring craftsmanship, reliability, and precision to every build.</p>
+                    <button class="btn btn--primary">Request a free quote</button>
+                </div>
+                <div class="hero__image-wrapper">
+                    <img src="assets/grant-lemons-jTCLppdwSEc-unsplash 1.jpg" alt="Modern Building" class="hero__image">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-us">
+            <div class="container about-us__wrapper">
+                <div class="about-us__text">
+                    <h2>About us</h2>
+                    <p>At BuildWise, we believe every project is more than bricks and mortar — it's a vision brought to life. For over 20 years, we've been delivering high-quality construction solutions for homeowners, businesses, and developers. </p>
+                    <p>Our team combines expert craftsmanship, innovative design, and uncompromising safety standards to ensure every build is done right the first time. From initial planning to the final walkthrough, we work closely with our clients, keeping communication clear and expectations aligned.</p>
+                    <p>Our mission is simple: to build spaces that inspire, serve, and last for generations.</p>
+                    <a href="#about" class="btn btn--primary btn--small">More about us</a>
+                </div>
+                <div class="about-us__image-wrapper">
+                    <img src="assets/About us.jpg" alt="Modern white house" class="about-us__image">
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="portfolio_content">
+                    <h2 class="portfolio_h2">Our Portfolio</h2>
+                    <p class="portfolio_description">From sleek modern homes to large-scale commercial complexes, our projects reflect the skill, precision, and dedication we bring to every build. Each one tells a story of careful planning, expert execution, and lasting quality.</p>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <div class="slider-track">
+                            <div class="card-small card-small-background-1">
+                                <div class="card-small-content">
+                                    <h4 class="card_h4">Metro Office Hub</h4>
+                                    <p class="card_description">Complete office fit-out for a 10,000 sq ft corporate headquarters.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-small card-small-background-2">
+                                <div class="card-small-content">
+                                    <h4 class="card_h4">Riverside Heights</h4>
+                                    <p class="card_description">Luxury residential complex with panoramic views and eco-friendly design.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-small card-small-background-3">
+                                <div class="card-small-content">
+                                    <h4 class="card_h4">Hillside Villa Renovation</h4>
+                                    <p class="card_description">Full interior and exterior remodel blending classic charm with modern finishes.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-small card-small-background-4">
+                                <div class="card-small-content">
+                                    <h4 class="card_h4">Hillside Villa Restoration</h4>
+                                    <p class="card_description">Complete restoration of a heritage property, blending classic architecture with modern comforts.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-small card-small-background-5">
+                                <div class="card-small-content">
+                                    <h4 class="card_h4">Riverside Heights Residences</h4>
+                                    <p class="card_description">A modern riverside apartment complex with energy-efficient design and panoramic city views.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-small card-small-background-6">
+                                <div class="card-small-content">
+                                    <h4 class="card_h4">Maple Grove Townhomes</h4>
+                                    <p class="card_description">A stylish suburban development offering comfort, community, and convenience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-buttons">
+                        <button class="button-circle prev button-circle-position">
+                            <img src="assets/Icon Button back.png" alt="Arrow left" class="icon-big">
+                        </button>
+
+                        <button class="button-circle next button-circle-position">
+                            <img src="assets/Icon Button next.png" alt="Arrow right" class="icon-big">
+                        </button>
+                    </div>
+
+                    <div class="slider-progress">
+                        <span class="progress-text">
+                            <span class="current">01</span>/<span class="total">02</span>
+                        </span>
+                        <div class="progress-line">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications">
+            <div class="container">
+                <div class="certifications__header">
+                    <h2>Certifications & credentials</h2>
+                    <p>We believe great construction starts with strong foundations — not just in buildings, but in professional standards. Our team holds industry-recognized certifications that ensure your project meets the highest levels of safety, quality, and compliance.</p>
+                </div>
+                <div class="certifications__grid">
+                    <div class="certification-card">
+                        <img src="assets/з1.jpg" alt="Fully Licensed & Insured" class="certification-card__image">
+                    </div>
+                    <div class="certification-card">
+                        <img src="assets/з2.jpg" alt="ISO 9001:2015 Certified" class="certification-card__image">
+                    </div>
+                    <div class="certification-card">
+                        <img src="assets/з3.jpg" alt="OSHA Safety Certified" class="certification-card__image">
+                    </div>
+                    <div class="certification-card">
+                        <img src="assets/з4.jpg" alt="LEED Accredited Professionals" class="certification-card__image">
+                    </div>
+                    <div class="certification-card">
+                        <img src="assets/з5.jpg" alt="Licensed General Contractor" class="certification-card__image">
+                    </div>
+                    <div class="certification-card">
+                        <img src="assets/з6.jpg" alt="OSHA Safety Trained" class="certification-card__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="partners">
+            <div class="container">
+                <div class="partners__header">
+                    <h2>Trusted partners</h2>
+                    <p>We believe great construction happens through strong partnerships. Over the years, we've teamed up with leading suppliers, architects, and industry organizations to ensure every project gets the best materials, expertise, and technology available.</p>
+                </div>
+                
+                <div class="partners__slider-wrapper">
+                    <div class="partners__slider">
+                        <div class="partners__track">
+                            <div class="partners__slide">
+                                <div class="partners__image-wrapper">
+                                    <img src="assets/a.jpg" alt="Trusted Partner 1" class="partners__image">
+                                </div>
+                            </div>
+                            
+                            <div class="partners__slide">
+                                <div class="partners__image-wrapper">
+                                    <img src="assets/a1.jpg" alt="Trusted Partner 2" class="partners__image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="partners__buttons">
+                        <button class="button-circle partners__prev button-circle-position">
+                            <img src="assets/Icon Button back.png" alt="Arrow left" class="icon-big">
+                        </button>
+
+                        <button class="button-circle partners__next button-circle-position">
+                            <img src="assets/Icon Button next.png" alt="Arrow right" class="icon-big">
+                        </button>
+                    </div>
+
+                    <div class="partners__progress">
+                        <span class="partners__progress-text">
+                            <span class="partners__current">01</span>/<span class="partners__total">02</span>
+                        </span>
+                        <div class="partners__progress-line">
+                            <div class="partners__progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently asked questions</h2>
+                <div class="faq__list">
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>What types of construction projects do you handle?</h4>
+                            <img src="assets/arrow down.svg" alt="Expand" class="faq__arrow">
+                        </div>
+                        <div class="faq__answer">
+                            <p>We handle a wide range of projects, from small residential renovations to large-scale commercial developments. Our expertise includes new construction, remodeling, additions, and more.</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>How long will my project take?</h4>
+                            <img src="assets/arrow down.svg" alt="Expand" class="faq__arrow">
+                        </div>
+                        <div class="faq__answer">
+                            <p>Project timelines vary depending on scope and complexity. We'll provide a detailed schedule after our initial consultation and keep you updated at every stage.</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>Do you provide cost estimates before starting?</h4>
+                            <img src="assets/arrow down.svg" alt="Expand" class="faq__arrow">
+                        </div>
+                        <div class="faq__answer">
+                            <p>Yes, we offer free, no-obligation quotes after an initial site visit and discussion of your needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>Are you licensed and insured?</h4>
+                            <img src="assets/arrow down.svg" alt="Expand" class="faq__arrow">
+                        </div>
+                        <div class="faq__answer">
+                            <p>Absolutely. We are fully licensed and insured, providing peace of mind and protection for every project we undertake.</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>Can you work with my own architect or designer?</h4>
+                            <img src="assets/arrow down.svg" alt="Expand" class="faq__arrow">
+                        </div>
+                        <div class="faq__answer">
+                            <p>We're happy to collaborate with your chosen professionals to ensure your vision is realized seamlessly.</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>Do you offer eco-friendly building options?</h4>
+                            <img src="assets/arrow down.svg" alt="Expand" class="faq__arrow">
+                        </div>
+                        <div class="faq__answer">
+                            <p>Yes, we are committed to sustainable building practices and offer a variety of green materials and energy-efficient solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacts" class="cta">
+            <div class="container cta__wrapper">
+                <div class="cta__text">
+                    <h2>Start your project today!</h2>
+                    <p>Tell us about your construction needs, and our team will get back to you with a detailed proposal.</p>
+                    <p>Once we receive your application, one of our project managers will contact you within 24 hours to discuss your goals, budget, and next steps.</p>
+                    <form class="cta__form">
+                        <input type="tel" placeholder="Phone Number" class="cta__input">
+                        <button type="submit" class="cta__submit-btn">Submit</button>
+                    </form>
+                    <small>
+                        *By clicking on the button, you agree to the privacy policy and give consent to the processing of your personal data.
+                    </small>
+                </div>
+                <div class="cta__image">
+                    <img src="assets/ii.jpg" alt="Modern building">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <a href="/" class="footer__logo-link">
+                        <img src="assets/Logo.png" alt="BuildWise Logo" class="footer__logo">
+                    </a>
+                    <p class="footer__copyright">&copy; 2023 Company</p>
+                    <div class="footer__socials">
+                        <a href="#" class="footer__social-link"><img src="assets/F.Instagram.svg" alt="Instagram"></a>
+                        <a href="#" class="footer__social-link"><img src="assets/F.Telegram.svg" alt="Telegram"></a>
+                        <a href="#" class="footer__social-link"><img src="assets/F.Twitter.svg" alt="Twitter"></a>
+                        <a href="#" class="footer__social-link"><img src="assets/F.Facebook.svg" alt="Facebook"></a>
+                    </div>
+                </div>
+                
+                <div class="footer__center">
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+                            <li><a href="#main">Main</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#price">Price</a></li>
+                            <li><a href="#certifications">Certifications</a></li>
+                            <li><a href="#contacts">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="footer__right">
+                    <h3>Tell us about your construction needs</h3>
+                    <p>Once we receive your application, one of our project managers will contact you within 24 hours to discuss your goals, budget, and next steps.</p>
+                    <form class="footer__form">
+                        <input type="tel" placeholder="Phone Number" class="footer__input">
+                        <button type="submit" class="btn btn--primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
