@@ -1,11 +1,15 @@
-/* CSS Reset */
+/* Main styles for the website */
+/* main styles */
+/* exported from Figma 12.03.2023, updated manually */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CSS Variables */
+/* colors and vars */
+/* vars */
 :root {
     /* Colors */
     --color-brand-primary: rgb(13, 39, 54);
@@ -26,32 +30,32 @@
 
     /* Typography */
     --font-family: 'Outfit', sans-serif;
-    
+
     /* Font Sizes */
     --h1-font-size: clamp(24px, 8vw, 72px);
     --h1-line-height: 1.1;
     --h1-font-weight: 700;
-    
+
     --h2-font-size: clamp(28px, 6vw, 48px);
     --h2-line-height: 1.2;
     --h2-font-weight: 700;
-    
+
     --h3-font-size: clamp(20px, 4vw, 32px);
     --h3-line-height: 1.2;
     --h3-font-weight: 600;
-    
+
     --h4-font-size: clamp(16px, 3vw, 24px);
     --h4-line-height: 1.3;
     --h4-font-weight: 600;
-    
+
     --bodyl-font-size: 16px;
     --bodyl-line-height: 1.6;
     --bodyl-font-weight: 400;
-    
+
     --bodym-font-size: 14px;
     --bodym-line-height: 1.5;
     --bodym-font-weight: 400;
-    
+
     --bodys-font-size: 12px;
     --bodys-line-height: 1.4;
     --bodys-font-weight: 400;
@@ -87,12 +91,15 @@
 }
 
 /* Base styles */
+/* base styles */
 body {
     font-family: var(--font-family);
     color: var(--color-grayscale-900);
     line-height: 1.6;
     background-color: var(--color-grayscale-000);
     overflow-x: hidden;
+    /* fix for white bar on right side on iphone */
+    width: 100%;
 }
 
 .container {
@@ -103,32 +110,37 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-family);
     line-height: 1.2;
     margin: 0;
     font-weight: 700;
 }
 
-h1 { 
+h1 {
     font-size: var(--h1-font-size);
     line-height: var(--h1-line-height);
     font-weight: var(--h1-font-weight);
 }
 
-h2 { 
+h2 {
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
     font-weight: var(--h2-font-weight);
 }
 
-h3 { 
+h3 {
     font-size: var(--h3-font-size);
     line-height: var(--h3-line-height);
     font-weight: var(--h3-font-weight);
 }
 
-h4 { 
+h4 {
     font-size: var(--h4-font-size);
     line-height: var(--h4-line-height);
     font-weight: var(--h4-font-weight);
@@ -141,7 +153,9 @@ p {
 }
 
 /* Button Components */
-.button, .btn {
+/* buttons */
+.button,
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -160,7 +174,8 @@ p {
     overflow: hidden;
 }
 
-.button::before, .btn::before {
+.button::before,
+.btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -171,11 +186,13 @@ p {
     transition: left var(--transition-slow);
 }
 
-.button:hover::before, .btn:hover::before {
+.button:hover::before,
+.btn:hover::before {
     left: 100%;
 }
 
-.button--primary, .btn--primary {
+.button--primary,
+.btn--primary {
     background: var(--color-brand-primary) !important;
     color: var(--color-grayscale-000) !important;
     border-radius: 8px;
@@ -189,13 +206,15 @@ p {
     white-space: nowrap;
 }
 
-.button--primary:hover, .btn--primary:hover {
+.button--primary:hover,
+.btn--primary:hover {
     background: var(--color-brand-primary-hover);
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
 }
 
-.button--primary:active, .btn--primary:active {
+.button--primary:active,
+.btn--primary:active {
     transform: translateY(0);
     box-shadow: none;
 }
@@ -243,7 +262,8 @@ p {
 }
 
 /* Button Sizes */
-.button--small, .btn--small {
+.button--small,
+.btn--small {
     padding: clamp(var(--spacing-xs), 2vw, var(--spacing-sm)) clamp(var(--spacing-sm), 3vw, var(--spacing-md));
     font-size: clamp(13px, 2.5vw, var(--bodym-font-size));
 }
@@ -478,6 +498,7 @@ p {
 }
 
 /* Header */
+/* header */
 .header {
     padding: var(--spacing-2xl) 0;
     position: fixed;
@@ -589,6 +610,7 @@ p {
 }
 
 /* Hero Section */
+/* hero section */
 .hero {
     background: var(--color-grayscale-000);
     padding-top: 140px;
@@ -664,6 +686,7 @@ p {
 }
 
 /* About Us Section */
+/* about section */
 .about-us {
     padding: var(--spacing-5xl) 0;
     background: var(--color-grayscale-000);
@@ -711,6 +734,7 @@ p {
 }
 
 /* Portfolio Section */
+/* portfolio */
 .portfolio {
     background: linear-gradient(135deg, var(--color-grayscale-100) 0%, #f1f5f9 100%);
     padding: var(--spacing-5xl) 0;
@@ -790,6 +814,7 @@ p {
 }
 
 /* Специальные стили для кнопок навигации слайдера - точно как в Trusted partners */
+/* slider buttons */
 .slider-buttons .button-circle {
     background: transparent !important;
     border: none !important;
@@ -1106,7 +1131,7 @@ p {
         margin: var(--spacing-lg) 0 !important;
         padding: 0 !important;
     }
-    
+
     .partners__buttons .button-circle {
         position: static !important;
         transform: none !important;
@@ -1480,6 +1505,7 @@ p {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1491,6 +1517,7 @@ p {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1502,6 +1529,7 @@ p {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1548,77 +1576,77 @@ p {
     .container {
         max-width: 1400px;
     }
-    
+
     .hero__text h1 {
         font-size: 64px;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-xl);
     }
-    
+
     /* Certifications для больших экранов */
     .certifications__header {
         text-align: center;
         margin-bottom: var(--spacing-2xl);
     }
-    
+
     .certifications__header h2 {
         font-size: 48px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .certifications__header p {
         font-size: 18px;
         line-height: 1.7;
         text-align: left;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-lg);
         margin-bottom: var(--spacing-2xl);
         justify-items: center;
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__icon {
         width: 40px;
         height: 40px;
         margin: 0 auto var(--spacing-lg);
     }
-    
+
     .certification-card__icon svg {
         width: 18px;
         height: 18px;
     }
-    
+
     .certification-card h3 {
         font-size: 24px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card p {
         font-size: 16px;
         line-height: 1.6;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card span {
         font-size: 16px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card .button {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 14px;
@@ -1626,7 +1654,7 @@ p {
         max-width: none;
         margin: 0 auto;
     }
-    
+
     .button--centered {
         margin: var(--spacing-2xl) auto 0;
         padding: var(--spacing-lg) var(--spacing-xl);
@@ -1635,30 +1663,30 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* FAQ для больших экранов */
     .faq {
         padding: var(--spacing-5xl) 0;
     }
-    
+
     .faq .container {
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: var(--spacing-4xl);
     }
-    
+
     .faq h2 {
         font-size: 48px;
         margin-bottom: var(--spacing-xl);
         text-align: left;
     }
-    
+
     .faq__item {
         border-bottom: 1px solid var(--color-grayscale-300);
         padding: var(--spacing-xl) 0;
     }
-    
-    
+
+
     .faq__question h4 {
         font-size: 20px;
         font-weight: 600;
@@ -1667,23 +1695,23 @@ p {
         flex: 1;
         padding-right: var(--spacing-lg);
     }
-    
-.faq__arrow {
-    width: 32px;
-    height: 32px;
-    transition: transform var(--transition-normal);
-}
-    
-    
+
+    .faq__arrow {
+        width: 32px;
+        height: 32px;
+        transition: transform var(--transition-normal);
+    }
+
+
     .faq__answer {
         max-height: 0;
         overflow: hidden;
     }
-    
+
     .faq__item--open .faq__answer {
         max-height: none;
     }
-    
+
     .faq__answer p {
         font-size: 18px;
         line-height: 1.7;
@@ -1691,61 +1719,61 @@ p {
         margin: var(--spacing-lg) 0 0;
         padding-right: var(--spacing-2xl);
     }
-    
+
     /* Portfolio для больших экранов */
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-2xl);
     }
-    
+
     .portfolio_h2 {
         font-size: 48px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .portfolio_description {
         font-size: 18px;
         line-height: 1.7;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 30px 0;
         margin-top: var(--spacing-xl);
     }
-    
+
     .slider {
         overflow: visible;
         border-radius: var(--radius-lg);
         padding: 30px 10px;
     }
-    
+
     .slider-track {
         gap: var(--spacing-lg);
         transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
+
     .card-small {
         width: 420px;
         height: 420px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 20px 24px 44px;
         height: 144px;
     }
-    
+
     .card_h4 {
         font-size: 24px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .card_description {
         font-size: 16px;
         line-height: 1.6;
     }
-    
+
     .slider-buttons {
         position: absolute;
         top: 50%;
@@ -1755,23 +1783,23 @@ p {
         justify-content: space-between;
         margin: 0;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 400px;
         margin: var(--spacing-2xl) auto;
         gap: 14px;
     }
-    
+
     .progress-text {
         font-size: 16px;
         min-width: 60px;
     }
-    
+
     .progress-line {
         height: 4px;
     }
-    
+
     .button-position {
         margin: var(--spacing-2xl) auto 0;
         padding: var(--spacing-lg) var(--spacing-xl);
@@ -1780,34 +1808,34 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* About Us для больших экранов */
     .about-us__wrapper {
         flex-direction: row;
         gap: var(--spacing-4xl);
         text-align: left;
     }
-    
+
     .about-us__text {
         max-width: 50%;
     }
-    
+
     .about-us__text h2 {
         font-size: 48px;
         margin-bottom: var(--spacing-lg);
         text-align: left;
     }
-    
+
     .about-us__text p {
         font-size: 18px;
         line-height: 1.7;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .about-us__image-wrapper {
         max-width: 50%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: auto;
@@ -1822,81 +1850,81 @@ p {
         max-width: 1140px;
         padding: 0 30px;
     }
-    
+
     .hero__text h1 {
         font-size: 56px;
     }
-    
+
     .hero__text p {
         font-size: 18px;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-lg);
     }
-    
+
     /* Certifications для средних ноутбуков */
     .certifications__header {
         text-align: center;
         margin-bottom: var(--spacing-2xl);
     }
-    
+
     .certifications__header h2 {
         font-size: 42px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .certifications__header p {
         font-size: 17px;
         line-height: 1.7;
         text-align: left;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-lg);
         margin-bottom: var(--spacing-2xl);
         justify-items: center;
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__icon {
         width: 40px;
         height: 40px;
         margin: 0 auto var(--spacing-lg);
     }
-    
+
     .certification-card__icon svg {
         width: 18px;
         height: 18px;
     }
-    
+
     .certification-card h3 {
         font-size: 22px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card p {
         font-size: 15px;
         line-height: 1.6;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card span {
         font-size: 15px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card .button {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 13px;
@@ -1904,7 +1932,7 @@ p {
         max-width: none;
         margin: 0 auto;
     }
-    
+
     .button--centered {
         margin: var(--spacing-2xl) auto 0;
         padding: var(--spacing-md) var(--spacing-lg);
@@ -1913,61 +1941,61 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* Portfolio для средних ноутбуков */
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-2xl);
     }
-    
+
     .portfolio_h2 {
         font-size: 42px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .portfolio_description {
         font-size: 17px;
         line-height: 1.7;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 25px 0;
         margin-top: var(--spacing-xl);
     }
-    
+
     .slider {
         overflow: visible;
         border-radius: var(--radius-lg);
         padding: 25px 10px;
     }
-    
+
     .slider-track {
         gap: var(--spacing-lg);
         transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
+
     .card-small {
         width: 380px;
         height: 380px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 14px 18px 30px;
         height: 110px;
     }
-    
+
     .card_h4 {
         font-size: 22px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .card_description {
         font-size: 15px;
         line-height: 1.6;
     }
-    
+
     .slider-buttons {
         position: absolute;
         top: 50%;
@@ -1977,23 +2005,23 @@ p {
         justify-content: space-between;
         margin: 0;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 380px;
         margin: var(--spacing-2xl) auto;
         gap: 12px;
     }
-    
+
     .progress-text {
         font-size: 15px;
         min-width: 55px;
     }
-    
+
     .progress-line {
         height: 4px;
     }
-    
+
     .button-position {
         margin: var(--spacing-2xl) auto 0;
         padding: var(--spacing-md) var(--spacing-lg);
@@ -2002,34 +2030,34 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* About Us для средних ноутбуков */
     .about-us__wrapper {
         flex-direction: row;
         gap: var(--spacing-3xl);
         text-align: left;
     }
-    
+
     .about-us__text {
         max-width: 50%;
     }
-    
+
     .about-us__text h2 {
         font-size: 42px;
         margin-bottom: var(--spacing-lg);
         text-align: left;
     }
-    
+
     .about-us__text p {
         font-size: 17px;
         line-height: 1.7;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .about-us__image-wrapper {
         max-width: 50%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: auto;
@@ -2044,80 +2072,80 @@ p {
         max-width: 960px;
         padding: 0 25px;
     }
-    
+
     .hero__text h1 {
         font-size: 48px;
     }
-    
+
     .hero__text p {
         font-size: 17px;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-md);
     }
-    
+
     /* Certifications для маленьких ноутбуков */
     .certifications__header {
         text-align: center;
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .certifications__header h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .certifications__header p {
         font-size: 16px;
         line-height: 1.6;
         text-align: left;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing-md);
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__icon {
         width: 40px;
         height: 40px;
         margin: 0 auto var(--spacing-md);
     }
-    
+
     .certification-card__icon svg {
         width: 18px;
         height: 18px;
     }
-    
+
     .certification-card h3 {
         font-size: 20px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card p {
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card span {
         font-size: 14px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card .button {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 12px;
@@ -2125,7 +2153,7 @@ p {
         max-width: none;
         margin: 0 auto;
     }
-    
+
     .button--centered {
         margin: var(--spacing-xl) auto 0;
         padding: var(--spacing-md) var(--spacing-lg);
@@ -2134,61 +2162,61 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* Portfolio для маленьких ноутбуков */
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .portfolio_h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .portfolio_description {
         font-size: 16px;
         line-height: 1.6;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 20px 0;
         margin-top: var(--spacing-lg);
     }
-    
+
     .slider {
         overflow: visible;
         border-radius: var(--radius-lg);
         padding: 20px 10px;
     }
-    
+
     .slider-track {
         gap: var(--spacing-md);
         transition: transform 0.5s ease;
     }
-    
+
     .card-small {
         width: 340px;
         height: 340px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 12px 16px 25px;
         height: 100px;
     }
-    
+
     .card_h4 {
         font-size: 20px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .card_description {
         font-size: 14px;
         line-height: 1.5;
     }
-    
+
     .slider-buttons {
         position: absolute;
         top: 50%;
@@ -2198,23 +2226,23 @@ p {
         justify-content: space-between;
         margin: 0;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 360px;
         margin: var(--spacing-xl) auto;
         gap: 10px;
     }
-    
+
     .progress-text {
         font-size: 14px;
         min-width: 50px;
     }
-    
+
     .progress-line {
         height: 4px;
     }
-    
+
     .button-position {
         margin: var(--spacing-xl) auto 0;
         padding: var(--spacing-md) var(--spacing-lg);
@@ -2223,34 +2251,34 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* About Us для маленьких ноутбуков */
     .about-us__wrapper {
         flex-direction: row;
         gap: var(--spacing-2xl);
         text-align: left;
     }
-    
+
     .about-us__text {
         max-width: 50%;
     }
-    
+
     .about-us__text h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-lg);
         text-align: left;
     }
-    
+
     .about-us__text p {
         font-size: 16px;
         line-height: 1.6;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .about-us__image-wrapper {
         max-width: 50%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: auto;
@@ -2264,20 +2292,20 @@ p {
     .container {
         padding: 0 20px;
     }
-    
+
     .hero__text h1 {
         font-size: 42px;
     }
-    
+
     .hero__text p {
         font-size: 16px;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
     }
-    
+
     .header__nav {
         position: fixed;
         top: 0;
@@ -2289,46 +2317,46 @@ p {
         border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         box-shadow: var(--shadow-lg);
     }
-    
+
     .header__nav.active {
         transform: translateY(0);
     }
-    
+
     .header__nav-list {
         gap: var(--spacing-xs);
     }
-    
+
     .header__nav-link {
         font-size: 14px;
         padding: var(--spacing-xs) var(--spacing-sm);
     }
-    
+
     /* About Us для средних экранов */
     .about-us__wrapper {
         flex-direction: column;
         gap: var(--spacing-2xl);
         text-align: center;
     }
-    
+
     .about-us__text {
         max-width: 100%;
     }
-    
+
     .about-us__text h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .about-us__text p {
         font-size: 16px;
         line-height: 1.6;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .about-us__image-wrapper {
         max-width: 100%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: 300px;
@@ -2342,25 +2370,25 @@ p {
     .container {
         padding: 0 20px;
     }
-    
+
     .hero {
         padding-top: 150px;
     }
-    
+
     .footer__right h3 {
         font-size: 18px;
         line-height: 1.2;
     }
-    
+
     .footer__right p {
         font-size: 13px;
         line-height: 1.3;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .header__nav {
         position: fixed;
         top: 0;
@@ -2444,31 +2472,31 @@ p {
     .container {
         padding: 0 15px;
     }
-    
+
     .hero {
         padding-top: 140px;
     }
-    
+
     .footer__right h3 {
         font-size: 16px;
         line-height: 1.2;
     }
-    
+
     .footer__right p {
         font-size: 12px;
         line-height: 1.3;
     }
-    
+
     .hero__text h1 {
         font-size: 40px;
         line-height: 1.1;
     }
-    
+
     .hero__text p {
         font-size: 18px;
         line-height: 1.5;
     }
-    
+
     .header__nav {
         position: fixed;
         top: 0;
@@ -2480,16 +2508,16 @@ p {
         border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         box-shadow: var(--shadow-lg);
     }
-    
+
     .header__nav.active {
         transform: translateY(0);
     }
-    
+
     .header__nav-link {
         font-size: 12px;
         padding: var(--spacing-xs);
     }
-    
+
     .header__nav-list {
         gap: var(--spacing-xs);
     }
@@ -2498,21 +2526,21 @@ p {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .certification-card {
         padding: var(--spacing-lg);
     }
-    
+
     .slider-wrapper {
         padding: 10px 0;
     }
-    
+
     .card-small {
         width: 100%;
         max-width: 400px;
         height: 400px;
     }
-    
+
     .slider-track {
         gap: var(--spacing-md);
     }
@@ -2525,14 +2553,14 @@ p {
         margin-left: 0;
         padding-left: var(--spacing-md);
     }
-    
+
     .footer__nav-list {
         gap: var(--spacing-xs);
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
     }
-    
+
     .footer__nav-list li a {
         font-size: 13px;
         padding: var(--spacing-xs) 0;
@@ -2545,25 +2573,25 @@ p {
     .container {
         padding: 0 12px;
     }
-    
+
     .hero__text h1 {
         font-size: 32px;
     }
-    
+
     .hero__text p {
         font-size: 15px;
     }
-    
+
     .footer__right h3 {
         font-size: 15px;
         line-height: 1.2;
     }
-    
+
     .footer__right p {
         font-size: 11px;
         line-height: 1.3;
     }
-    
+
     .header__nav {
         position: fixed;
         top: 0;
@@ -2575,119 +2603,119 @@ p {
         border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         box-shadow: var(--shadow-lg);
     }
-    
+
     .header__nav.active {
         transform: translateY(0);
     }
-    
+
     .header__nav-link {
         font-size: 11px;
         padding: var(--spacing-xs);
     }
-    
+
     .header__nav-list {
         gap: 2px;
     }
-    
+
     .btn--header {
         font-size: 12px;
         padding: var(--spacing-xs) var(--spacing-sm);
     }
-    
+
     .card-small {
         max-width: 350px;
         height: 350px;
     }
-    
+
     /* About Us для больших телефонов */
     .about-us__wrapper {
         flex-direction: column;
         gap: var(--spacing-xl);
         text-align: center;
     }
-    
+
     .about-us__text {
         max-width: 100%;
     }
-    
+
     .about-us__text h2 {
         font-size: 32px;
         margin-bottom: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .about-us__text p {
         font-size: 15px;
         line-height: 1.5;
         margin-bottom: var(--spacing-sm);
         text-align: left;
     }
-    
+
     .about-us__image-wrapper {
         max-width: 100%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: 250px;
         object-fit: cover;
         border-radius: var(--radius-md);
     }
-    
+
     /* Portfolio для средних экранов */
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .portfolio_h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .portfolio_description {
         font-size: 16px;
         line-height: 1.6;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 20px 0;
         margin-top: var(--spacing-lg);
     }
-    
+
     .slider {
         overflow: hidden;
         border-radius: var(--radius-lg);
         padding: 20px 0;
     }
-    
+
     .slider-track {
         gap: var(--spacing-md);
         transition: transform 0.5s ease;
     }
-    
+
     .card-small {
         width: 350px;
         height: 350px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 16px 20px 30px;
         height: 100px;
     }
-    
+
     .card_h4 {
         font-size: 18px;
         margin-bottom: 6px;
     }
-    
+
     .card_description {
         font-size: 14px;
         line-height: 1.4;
     }
-    
+
     .slider-buttons {
         position: static;
         transform: none;
@@ -2697,23 +2725,23 @@ p {
         left: auto;
         right: auto;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 350px;
         margin: var(--spacing-lg) auto;
         gap: var(--spacing-md);
     }
-    
+
     .progress-text {
         font-size: 14px;
         min-width: 50px;
     }
-    
+
     .progress-line {
         height: 4px;
     }
-    
+
     .button-position {
         margin: var(--spacing-xl) auto 0;
         padding: var(--spacing-md) var(--spacing-lg);
@@ -2722,67 +2750,67 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* Certifications для средних экранов */
     .certifications__header {
         text-align: center;
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .certifications__header h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certifications__header p {
         font-size: 16px;
         line-height: 1.6;
         text-align: left;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__icon {
         width: 40px;
         height: 40px;
         margin: 0 auto var(--spacing-md);
     }
-    
+
     .certification-card__icon svg {
         width: 18px;
         height: 18px;
     }
-    
+
     .certification-card h3 {
         font-size: 20px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card p {
         font-size: 15px;
         line-height: 1.5;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card span {
         font-size: 14px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certification-card .button {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 13px;
@@ -2790,7 +2818,7 @@ p {
         max-width: none;
         margin: 0 auto;
     }
-    
+
     .button--centered {
         margin: var(--spacing-xl) auto 0;
         padding: var(--spacing-md) var(--spacing-lg);
@@ -2799,30 +2827,30 @@ p {
         max-width: none;
         display: inline-block;
     }
-    
+
     /* FAQ для средних экранов */
     .faq {
         padding: var(--spacing-4xl) 0;
     }
-    
+
     .faq .container {
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: var(--spacing-2xl);
     }
-    
+
     .faq h2 {
         font-size: 36px;
         margin-bottom: var(--spacing-lg);
         text-align: left;
     }
-    
+
     .faq__item {
         border-bottom: 1px solid var(--color-grayscale-300);
         padding: var(--spacing-lg) 0;
     }
-    
-    
+
+
     .faq__question h4 {
         font-size: 18px;
         font-weight: 600;
@@ -2831,22 +2859,22 @@ p {
         flex: 1;
         padding-right: var(--spacing-md);
     }
-    
+
     .faq__question .faq__arrow {
         width: 24px;
         height: 24px;
     }
-    
-    
+
+
     .faq__answer {
         max-height: 0;
         overflow: hidden;
     }
-    
+
     .faq__item--open .faq__answer {
         max-height: none;
     }
-    
+
     .faq__answer p {
         font-size: 16px;
         line-height: 1.6;
@@ -2861,26 +2889,26 @@ p {
     .container {
         padding: 0 10px;
     }
-    
+
     .hero {
         padding-top: 120px;
     }
-    
+
     .footer__right h3 {
         font-size: 14px;
         line-height: 1.2;
     }
-    
+
     .footer__right p {
         font-size: 11px;
         line-height: 1.3;
     }
-    
+
     .hero__text h1 {
         font-size: 28px;
         line-height: 1.1;
     }
-    
+
     .hero__text p {
         font-size: 15px;
         line-height: 1.4;
@@ -2894,7 +2922,7 @@ p {
     .btn--header {
         display: none;
     }
-    
+
     .header__nav {
         position: fixed;
         top: 0;
@@ -2906,46 +2934,46 @@ p {
         border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         box-shadow: var(--shadow-lg);
     }
-    
+
     .header__nav.active {
         transform: translateY(0);
     }
-    
+
     .header__nav-link {
         font-size: 10px;
         padding: var(--spacing-xs);
     }
-    
+
     .header__nav-list {
         gap: 2px;
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .card-small {
         width: 100%;
         max-width: 350px;
         height: 350px;
     }
-    
+
     .card-small-content {
         padding: 15px 20px 30px;
         height: 120px;
     }
-    
+
     .card_h4 {
         font-size: 18px;
         margin-bottom: 5px;
     }
-    
+
     .card_description {
         font-size: 14px;
     }
@@ -2957,75 +2985,75 @@ p {
     .cta__form {
         flex-direction: column;
     }
-    
+
     .slider-buttons {
         gap: var(--spacing-md);
     }
-    
+
     .button-circle {
         width: 48px;
         height: 48px;
     }
-    
+
     .icon-big {
         width: 20px;
         height: 20px;
     }
-    
+
     /* Portfolio для маленьких телефонов */
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .portfolio_h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .portfolio_description {
         font-size: 14px;
         line-height: 1.5;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 10px 0;
         margin-top: var(--spacing-sm);
     }
-    
+
     .slider {
         overflow: hidden;
         border-radius: var(--radius-md);
         padding: 10px 0;
     }
-    
+
     .slider-track {
         gap: var(--spacing-xs);
         transition: transform 0.4s ease;
     }
-    
+
     .card-small {
         width: 300px;
         height: 300px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 12px 16px 22px;
         height: 85px;
     }
-    
+
     .card_h4 {
         font-size: 16px;
         margin-bottom: 4px;
     }
-    
+
     .card_description {
         font-size: 12px;
         line-height: 1.3;
     }
-    
+
     .slider-buttons {
         position: static;
         transform: none;
@@ -3035,23 +3063,23 @@ p {
         left: auto;
         right: auto;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 300px;
         margin: var(--spacing-sm) auto;
         gap: var(--spacing-xs);
     }
-    
+
     .progress-text {
         font-size: 12px;
         min-width: 42px;
     }
-    
+
     .progress-line {
         height: 3px;
     }
-    
+
     .button-position {
         margin: var(--spacing-sm) auto 0;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -3060,96 +3088,96 @@ p {
         max-width: 300px;
         display: block;
     }
-    
-    /* About Us для маленьких телефонов */
+
+    /* About Us for small phones */
     .about-us__wrapper {
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .about-us__text {
         max-width: 100%;
     }
-    
+
     .about-us__text h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-md);
         text-align: center;
     }
-    
+
     .about-us__text p {
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: var(--spacing-sm);
         text-align: left;
     }
-    
+
     .about-us__image-wrapper {
         max-width: 100%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: 200px;
         object-fit: cover;
         border-radius: var(--radius-md);
     }
-    
-    /* Portfolio для больших телефонов */
+
+    /* Portfolio for big phones */
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .portfolio_h2 {
         font-size: 32px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .portfolio_description {
         font-size: 15px;
         line-height: 1.5;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 15px 0;
         margin-top: var(--spacing-md);
     }
-    
+
     .slider {
         overflow: hidden;
         border-radius: var(--radius-md);
         padding: 15px 0;
     }
-    
+
     .slider-track {
         gap: var(--spacing-sm);
         transition: transform 0.4s ease;
     }
-    
+
     .card-small {
         width: 320px;
         height: 320px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 14px 18px 25px;
         height: 90px;
     }
-    
+
     .card_h4 {
         font-size: 17px;
         margin-bottom: 5px;
     }
-    
+
     .card_description {
         font-size: 13px;
         line-height: 1.3;
     }
-    
+
     .slider-buttons {
         position: static;
         transform: none;
@@ -3159,23 +3187,23 @@ p {
         left: auto;
         right: auto;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 320px;
         margin: var(--spacing-md) auto;
         gap: var(--spacing-sm);
     }
-    
+
     .progress-text {
         font-size: 13px;
         min-width: 45px;
     }
-    
+
     .progress-line {
         height: 3px;
     }
-    
+
     .button-position {
         margin: var(--spacing-md) auto 0;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -3184,68 +3212,68 @@ p {
         max-width: 320px;
         display: block;
     }
-    
-    /* Certifications для больших телефонов */
+
+    /* Certifications for big phones */
     .certifications__header {
         text-align: center;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .certifications__header h2 {
         font-size: 32px;
         margin-bottom: var(--spacing-md);
     }
-    
+
     .certifications__header p {
         font-size: 15px;
         line-height: 1.5;
         text-align: left;
     }
-    
+
     .certifications__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
         margin-bottom: var(--spacing-lg);
         justify-items: center;
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__icon {
         width: 36px;
         height: 36px;
         margin: 0 auto var(--spacing-sm);
     }
-    
+
     .certification-card__icon svg {
         width: 16px;
         height: 16px;
     }
-    
+
     .certification-card h3 {
         font-size: 18px;
         margin-bottom: var(--spacing-xs);
     }
-    
+
     .certification-card p {
         font-size: 14px;
         line-height: 1.4;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card span {
         font-size: 13px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card .button {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 12px;
@@ -3253,7 +3281,7 @@ p {
         max-width: 110px;
         margin: 0 auto;
     }
-    
+
     .button--centered {
         margin: var(--spacing-lg) auto 0;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -3269,66 +3297,66 @@ p {
     .container {
         padding: 0 8px;
     }
-    
+
     .hero__text h1 {
         font-size: 26px;
     }
-    
+
     .hero__text p {
         font-size: 14px;
     }
-    
+
     .header__nav-link {
         font-size: 12px;
         padding: var(--spacing-xs);
     }
-    
+
     .card-small {
         max-width: 320px;
         height: 320px;
     }
-    
+
     .card-small-content {
         padding: 12px 16px 25px;
         height: 110px;
     }
-    
+
     .card_h4 {
         font-size: 16px;
     }
-    
+
     .card_description {
         font-size: 13px;
     }
-    
-    /* About Us для очень маленьких телефонов */
+
+    /* About Us for very small phones */
     .about-us__wrapper {
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
     }
-    
+
     .about-us__text {
         max-width: 100%;
     }
-    
+
     .about-us__text h2 {
         font-size: 26px;
         margin-bottom: var(--spacing-sm);
         text-align: center;
     }
-    
+
     .about-us__text p {
         font-size: 13px;
         line-height: 1.4;
         margin-bottom: var(--spacing-xs);
         text-align: left;
     }
-    
+
     .about-us__image-wrapper {
         max-width: 100%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: 180px;
@@ -3342,83 +3370,83 @@ p {
     .container {
         padding: 0 8px;
     }
-    
+
     .hero__text h1 {
         font-size: 28px;
     }
-    
+
     .hero__text p {
         font-size: 15px;
     }
-    
+
     .card-small {
         max-width: 300px;
         height: 300px;
     }
-    
+
     .card-small-content {
         padding: 12px 15px 25px;
         height: 100px;
     }
-    
+
     .card_h4 {
         font-size: 16px;
     }
-    
+
     .card_description {
         font-size: 13px;
     }
-    
+
     .certification-card {
         padding: var(--spacing-sm);
     }
-    
+
     .certification-card h3 {
         font-size: 18px;
     }
-    
+
     .certification-card p {
         font-size: 14px;
     }
-    
+
     .button-circle {
         width: 44px;
         height: 44px;
     }
-    
+
     .icon-big {
         width: 18px;
         height: 18px;
     }
-    
-    /* About Us для экстра маленьких телефонов */
+
+    /* About Us for extra small phones */
     .about-us__wrapper {
         flex-direction: column;
         gap: var(--spacing-sm);
         text-align: center;
     }
-    
+
     .about-us__text {
         max-width: 100%;
     }
-    
+
     .about-us__text h2 {
         font-size: 24px;
         margin-bottom: var(--spacing-sm);
         text-align: center;
     }
-    
+
     .about-us__text p {
         font-size: 12px;
         line-height: 1.4;
         margin-bottom: var(--spacing-xs);
         text-align: left;
     }
-    
+
     .about-us__image-wrapper {
         max-width: 100%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: 160px;
@@ -3432,22 +3460,22 @@ p {
     .container {
         padding: 0 6px;
     }
-    
-    /* Header адаптация для 320px */
+
+    /* Header calc for 320px */
     .header {
         padding: var(--spacing-sm) 0;
     }
-    
+
     .header .container {
         flex-wrap: wrap;
         gap: var(--spacing-xs);
     }
-    
+
     .header__logo {
         height: 24px;
         order: 1;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
         order: 2;
@@ -3455,21 +3483,22 @@ p {
         z-index: 1001;
         padding: var(--spacing-xs);
     }
-    
+
     .mobile-menu-toggle .hamburger {
         width: 20px;
         height: 2px;
     }
-    
+
     .btn--header {
         order: 3;
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 11px;
         white-space: nowrap;
-        display: none; /* Скрываем кнопку телефона на 320px чтобы не мешала */
+        display: none;
+        /* Hide phone button on 320px */
     }
-    
-    /* Мобильное меню для 320px - сверху */
+
+    /* Mobile menu for 320px - top */
     .header__nav {
         position: fixed;
         top: 0;
@@ -3484,18 +3513,18 @@ p {
         border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         max-height: 80px;
     }
-    
+
     .header__nav.mobile-open {
         transform: translateY(0);
     }
-    
+
     .header__nav-list {
         flex-direction: column;
         gap: 0px;
         align-items: center;
         width: 100%;
     }
-    
+
     .header__nav-link {
         font-size: 7px;
         padding: 1px;
@@ -3505,173 +3534,174 @@ p {
         transition: background-color var(--transition-fast);
         line-height: 1.2;
     }
-    
+
     .header__nav-link:hover {
         background-color: var(--color-grayscale-100);
     }
-    
+
     .header__nav-link--active {
         background-color: var(--color-brand-primary);
         color: var(--color-grayscale-000);
     }
-    
-    /* Hero секция для 320px */
+
+    /* Hero section for 320px */
     .hero {
         padding-top: 160px;
     }
-    
+
     .hero__content {
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
         padding: 0 var(--spacing-sm);
     }
-    
+
     .hero__text {
         max-width: 100%;
         order: 2;
     }
-    
+
     .hero__text h1 {
         font-size: 22px;
         line-height: 1.3;
         margin-bottom: var(--spacing-sm);
         word-wrap: break-word;
     }
-    
+
     .hero__text p {
         font-size: 13px;
         line-height: 1.5;
         margin-bottom: var(--spacing-sm);
         word-wrap: break-word;
     }
-    
+
     .hero__image-wrapper {
         max-width: 100%;
         order: 1;
     }
-    
+
     .hero__image {
         width: 100%;
         height: 200px;
         object-fit: cover;
         border-radius: var(--radius-md);
     }
-    
-    .button--primary, .btn--primary {
+
+    .button--primary,
+    .btn--primary {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 13px;
         width: 100%;
         margin-top: var(--spacing-xs);
         max-width: 280px;
     }
-    
-    /* About Us секция для 320px */
+
+    /* About Us section for 320px */
     .about-us {
         padding: var(--spacing-3xl) 0;
     }
-    
+
     .about-us__wrapper {
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .about-us__text {
         order: 2;
         max-width: 100%;
     }
-    
+
     .about-us__text h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-md);
         text-align: center;
     }
-    
+
     .about-us__text p {
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: var(--spacing-sm);
         text-align: left;
     }
-    
+
     .about-us__image-wrapper {
         order: 1;
         max-width: 100%;
     }
-    
+
     .about-us__image {
         width: 100%;
         height: 200px;
         object-fit: cover;
         border-radius: var(--radius-md);
     }
-    
+
     .btn--small {
         width: 100%;
         max-width: 280px;
         margin: 0 auto;
         display: block;
     }
-    
-    /* Portfolio секция для 320px */
+
+    /* Portfolio section for 320px */
     .portfolio {
         padding: var(--spacing-3xl) 0;
     }
-    
+
     .portfolio_content {
         text-align: center;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .portfolio_h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .portfolio_description {
         font-size: 14px;
         line-height: 1.5;
         text-align: left;
     }
-    
+
     .slider-wrapper {
         padding: 10px 0;
         margin-top: var(--spacing-md);
     }
-    
+
     .slider {
         overflow: hidden;
         border-radius: var(--radius-md);
         padding: 10px 0;
     }
-    
+
     .slider-track {
         gap: var(--spacing-sm);
         transition: transform 0.4s ease;
     }
-    
+
     .card-small {
         width: 280px;
         height: 280px;
         flex-shrink: 0;
     }
-    
+
     .card-small-content {
         padding: 12px 16px 20px;
         height: 80px;
     }
-    
+
     .card_h4 {
         font-size: 16px;
         margin-bottom: 4px;
     }
-    
+
     .card_description {
         font-size: 12px;
         line-height: 1.3;
     }
-    
+
     .slider-buttons {
         position: static;
         transform: none;
@@ -3681,23 +3711,23 @@ p {
         left: auto;
         right: auto;
     }
-    
-    
+
+
     .slider-progress {
         max-width: 280px;
         margin: var(--spacing-md) auto;
         gap: var(--spacing-sm);
     }
-    
+
     .progress-text {
         font-size: 12px;
         min-width: 40px;
     }
-    
+
     .progress-line {
         height: 3px;
     }
-    
+
     .button-position {
         margin: var(--spacing-lg) auto 0;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -3706,72 +3736,72 @@ p {
         max-width: 280px;
         display: block;
     }
-    
-    /* Certifications секция для 320px */
+
+    /* Certifications section for 320px */
     .certifications {
         padding: var(--spacing-3xl) 0;
     }
-    
+
     .certifications__header {
         text-align: center;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .certifications__header h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certifications__header p {
         font-size: 14px;
         line-height: 1.5;
         text-align: left;
     }
-    
+
     .certifications__grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
         margin-bottom: var(--spacing-lg);
         justify-items: center;
     }
-    
+
     .certification-card {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__image {
         width: 100%;
         height: auto;
     }
-    
+
     .certification-card__icon {
         width: 32px;
         height: 32px;
         margin: 0 auto var(--spacing-sm);
     }
-    
+
     .certification-card__icon svg {
         width: 14px;
         height: 14px;
     }
-    
+
     .certification-card h3 {
         font-size: 16px;
         margin-bottom: var(--spacing-xs);
     }
-    
+
     .certification-card p {
         font-size: 13px;
         line-height: 1.4;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card span {
         font-size: 12px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .certification-card .button {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 11px;
@@ -3779,7 +3809,7 @@ p {
         max-width: 120px;
         margin: 0 auto;
     }
-    
+
     .button--centered {
         margin: var(--spacing-lg) auto 0;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -3788,48 +3818,48 @@ p {
         max-width: 280px;
         display: block;
     }
-    
-    /* Partners секция для 320px */
+
+    /* Partners section for 320px */
     .partners {
         padding: var(--spacing-3xl) 0;
     }
-    
+
     .partners__header {
         text-align: center;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .partners__header h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .partners__header p {
         font-size: 14px;
         line-height: 1.5;
         text-align: left;
     }
-    
+
     .partners__image-wrapper {
         height: 200px;
         width: 100%;
         margin: 0;
     }
-    
+
     .partners__slider {
         overflow: hidden;
     }
-    
+
     .partners__track {
         display: flex;
         transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
+
     .partners__slide {
         min-width: 100%;
         flex-shrink: 0;
     }
-    
+
     .partners__buttons {
         position: static;
         display: flex;
@@ -3838,7 +3868,7 @@ p {
         gap: var(--spacing-lg);
         margin: var(--spacing-lg) 0;
     }
-    
+
     .partners__prev,
     .partners__next {
         width: 56px;
@@ -3852,34 +3882,34 @@ p {
         cursor: pointer;
         transition: all var(--transition-normal);
     }
-    
+
     .partners__prev:hover,
     .partners__next:hover {
         transform: translateY(-2px) scale(1.05);
         box-shadow: var(--shadow-lg);
     }
-    
+
     .partners__prev img,
     .partners__next img {
         width: 24px;
         height: 24px;
         filter: brightness(0) invert(1);
     }
-    
+
     .partners__overlay {
         padding: var(--spacing-lg);
     }
-    
+
     .partners__overlay h3 {
         font-size: 20px;
         margin-bottom: var(--spacing-xs);
     }
-    
+
     .partners__overlay p {
         font-size: 14px;
         line-height: 1.4;
     }
-    
+
     .partners__buttons {
         position: static;
         transform: none;
@@ -3890,17 +3920,17 @@ p {
         right: auto;
         padding: 0;
     }
-    
+
     .partners__progress {
         margin: var(--spacing-md) 0;
         gap: var(--spacing-sm);
     }
-    
+
     .partners__progress-text {
         font-size: 14px;
         min-width: 50px;
     }
-    
+
     .partners__progress-line {
         width: 150px;
         height: 3px;
@@ -3909,31 +3939,31 @@ p {
 
 
 
-/* Partners адаптация для 320px */
+/* Partners adaptation for 320px */
 @media (max-width: 320px) {
     .partners__slider {
         overflow: hidden;
         border-radius: var(--radius-lg);
         position: relative;
     }
-    
+
     .partners__track {
         display: flex;
         transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         width: max-content;
     }
-    
+
     .partners__slide {
         min-width: 100%;
         flex-shrink: 0;
     }
-    
+
     .partners__image-wrapper {
         height: 200px;
         width: 100%;
         margin: 0;
     }
-    
+
     .partners__buttons {
         position: static;
         display: flex;
@@ -3942,7 +3972,7 @@ p {
         gap: var(--spacing-lg);
         margin: var(--spacing-lg) 0;
     }
-    
+
     .partners__prev,
     .partners__next {
         width: 56px;
@@ -3956,13 +3986,13 @@ p {
         cursor: pointer;
         transition: all var(--transition-normal);
     }
-    
+
     .partners__prev:hover,
     .partners__next:hover {
         transform: translateY(-2px) scale(1.05);
         box-shadow: var(--shadow-lg);
     }
-    
+
     .partners__prev img,
     .partners__next img {
         width: 24px;
@@ -3971,28 +4001,28 @@ p {
     }
 }
 
-/* Footer адаптация для 320px */
+/* Footer adaptation for 320px */
 @media (max-width: 320px) {
     .footer {
         padding: var(--spacing-2xl) 0;
     }
-    
+
     .footer__content {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .footer__left {
         order: 1;
         align-items: center;
     }
-    
+
     .footer__logo {
         height: 20px;
     }
-    
+
     .footer__center {
         order: 2;
         justify-content: flex-start;
@@ -4001,40 +4031,40 @@ p {
         margin-top: var(--spacing-sm);
         padding-left: var(--spacing-md);
     }
-    
+
     .footer__nav-list {
         flex-direction: column;
         gap: var(--spacing-xs);
         justify-content: flex-start;
         align-items: flex-start;
     }
-    
+
     .footer__nav-list li a {
         font-size: 12px;
         padding: var(--spacing-xs) 0;
         text-align: left;
         line-height: 1.3;
     }
-    
+
     .footer__right {
         order: 3;
         align-items: center;
     }
-    
+
     .footer__right h3 {
         font-size: 10px;
         text-align: center;
         line-height: 1.1;
         margin-bottom: var(--spacing-xs);
     }
-    
+
     .footer__right p {
         font-size: 8px;
         text-align: center;
         line-height: 1.2;
         margin-bottom: var(--spacing-xs);
     }
-    
+
     .footer__form {
         flex-direction: column;
         gap: var(--spacing-xs);
@@ -4043,63 +4073,63 @@ p {
         margin: 0 auto;
         padding: 0 var(--spacing-xs);
     }
-    
+
     .footer__input {
         padding: var(--spacing-xs);
         font-size: 9px;
         border-radius: var(--radius-sm);
     }
-    
+
     .footer__input::placeholder {
         font-size: 9px;
     }
-    
+
     .footer__form .btn {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: 9px;
         border-radius: var(--radius-sm);
         width: 100%;
     }
-    
+
     .footer__socials {
         justify-content: center;
     }
-    
+
     .footer__social-link {
         width: 32px;
         height: 32px;
     }
-    
+
     .footer__social-link img {
         width: 14px;
         height: 14px;
     }
 }
 
-/* FAQ адаптация для 320px */
+/* FAQ adaptation for 320px */
 @media (max-width: 320px) {
     .faq {
         padding: var(--spacing-3xl) 0;
     }
-    
+
     .faq .container {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-lg);
     }
-    
+
     .faq h2 {
         font-size: 28px;
         margin-bottom: var(--spacing-md);
         text-align: center;
     }
-    
+
     .faq__item {
         border-bottom: 1px solid var(--color-grayscale-300);
         padding: var(--spacing-md) 0;
     }
-    
-    
+
+
     .faq__question {
         display: flex;
         justify-content: space-between;
@@ -4107,7 +4137,7 @@ p {
         cursor: pointer;
         padding: var(--spacing-sm) 0;
     }
-    
+
     .faq__question h4 {
         font-size: 16px;
         font-weight: 600;
@@ -4116,22 +4146,22 @@ p {
         flex: 1;
         padding-right: var(--spacing-sm);
     }
-    
+
     .faq__question .faq__arrow {
         width: 20px;
         height: 20px;
     }
-    
-    
+
+
     .faq__answer {
         max-height: 0;
         overflow: hidden;
     }
-    
+
     .faq__item--open .faq__answer {
         max-height: none;
     }
-    
+
     .faq__answer p {
         font-size: 14px;
         line-height: 1.5;

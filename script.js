@@ -1,56 +1,92 @@
-document.addEventListener('DOMContentLoaded', () => {
+// script.js
+// function for site functionality
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("Site loaded");
     // Certifications selection functionality
-    const certificationCards = document.querySelectorAll('.certification-card');
-    
-    certificationCards.forEach(card => {
-        card.addEventListener('click', () => {
-            // Remove selected class from all cards
+    // Certifications section
+    // selecting all cards
+    var certificationCards = document.querySelectorAll('.certification-card');
+
+    // loop through cards
+    for (var i = 0; i < certificationCards.length; i++) {
+        let card = certificationCards[i];
+        card.addEventListener('click', function () {
+            // check if works
+            console.log("Card clicked");
+
+
+            // remove class from others
             certificationCards.forEach(c => c.classList.remove('selected'));
-            
-            // Add selected class to clicked card
-            card.classList.add('selected');
-        });
-    });
 
-    // Portfolio cards selection functionality
+            // test comment
+            // card.style.backgroundColor = 'red';
+
+            // add class
+            this.classList.add('selected');
+        });
+    }
+
+
+
+    // portfolio element
+    // find elements
     const portfolioCards = document.querySelectorAll('.card-small');
-    console.log('Found portfolio cards:', portfolioCards.length);
-    
-    portfolioCards.forEach((card, index) => {
-        card.addEventListener('click', (e) => {
-            e.preventDefault();
+    // console.log('Found portfolio cards:', portfolioCards.length);
+
+    // changing cards on click
+    portfolioCards.forEach(function (card, index) {
+
+
+        card.addEventListener('click', function (e) {
+            e.preventDefault(); // stop link
             e.stopPropagation();
-            console.log('Portfolio card clicked:', index);
-            
-            // Remove selected class from all portfolio cards
-            portfolioCards.forEach(c => c.classList.remove('selected'));
-            
-            // Add selected class to clicked card
+            console.log('Portfolio card clicked:' + index);
+
+
+            portfolioCards.forEach(function (c) {
+                c.classList.remove('selected');
+            });
+
+            /*
+            portfolioCards.forEach(c => {
+                c.style.border = 'none';
+            });
+            */
+
+            // select new
             card.classList.add('selected');
-            console.log('Card selected:', card.classList.contains('selected'));
+
+            // check
+            // console.log('Card selected:', card.classList.contains('selected'));
         });
     });
 
 
-    // FAQ functionality
-    const faqItems = document.querySelectorAll('.faq__item');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq__question');
+    // QA
+
+    var faqItems = document.querySelectorAll('.faq__item'); // get all items
+
+    faqItems.forEach(function (item) {
+        var question = item.querySelector('.faq__question');
+        // if question exists
         if (question) {
-            question.addEventListener('click', () => {
-                const isOpen = item.classList.contains('faq__item--open');
-                const arrow = item.querySelector('.faq__arrow');
-                
+            question.addEventListener('click', function () {
+                var isOpen = item.classList.contains('faq__item--open');
+                var arrow = item.querySelector('.faq__arrow');
+
+                // check status
                 if (isOpen) {
-                    // Close the clicked item
+                    // close
                     item.classList.remove('faq__item--open');
+                    // arrow back
                     if (arrow) {
                         arrow.src = 'assets/arrow down.svg';
                     }
                 } else {
-                    // Open the clicked item
+                    // open
                     item.classList.add('faq__item--open');
+                    // rotate arrow
                     if (arrow) {
                         arrow.src = 'assets/arrow up.svg';
                     }
@@ -60,67 +96,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Portfolio carousel functionality
-    const track = document.querySelector('.slider-track');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const progressFill = document.querySelector('.progress-fill');
-    const currentSlide = document.querySelector('.current');
-    const totalSlides = document.querySelector('.total');
-    
+
+    var track = document.querySelector('.slider-track');
+    var prevBtn = document.querySelector('.prev');
+    var nextBtn = document.querySelector('.next');
+    var progressFill = document.querySelector('.progress-fill');
+    var currentSlide = document.querySelector('.current');
+    var totalSlides = document.querySelector('.total');
+
+    // check elements
     if (!track || !prevBtn || !nextBtn) {
-        console.log('Carousel elements not found');
+        // console.log('Carousel elements not found');
         return;
     }
-    
-    const slides = Array.from(track.children);
+
+    // array of slides
+    var slides = Array.from(track.children);
     if (slides.length === 0) {
-        console.log('No slides found');
         return;
     }
 
-    let currentIndex = 0;
-    const slidesToShow = 3; 
-    const totalPages = slides.length - slidesToShow + 1; 
+    var currentIndex = 0;
+    var slidesToShow = 3;
+    var totalPages = slides.length - slidesToShow + 1;
 
-    console.log('Carousel setup:', { slides: slides.length, slidesToShow, totalPages });
+    // console.log('Carousel setup:', { slides: slides.length, slidesToShow, totalPages });
 
-    // Set initial state
+    // initial count
     if (totalSlides) totalSlides.textContent = totalPages.toString().padStart(2, '0');
-    
-    const updateProgress = () => {
+
+    // update the bar
+    function updateProgress() {
         if (progressFill && currentSlide) {
-            const progress = ((currentIndex + 1) / totalPages) * 100;
-            progressFill.style.width = `${progress}%`;
+            var progress = ((currentIndex + 1) / totalPages) * 100;
+            progressFill.style.width = progress + '%';
+            // update number
             currentSlide.textContent = (currentIndex + 1).toString().padStart(2, '0');
         }
     };
 
-    let isAnimating = false; 
+    var isAnimating = false;
 
-    const moveToSlide = (targetIndex) => {
+    // move logic
+    function moveToSlide(targetIndex) {
         if (targetIndex < 0 || targetIndex >= totalPages || isAnimating) return;
-        
-        isAnimating = true; 
-        
-        // Calculate move amount - move by 1 slide at a time
-        const slideWidth = track.getBoundingClientRect().width / slidesToShow;
-        const moveAmount = -(targetIndex * slideWidth);
-        
-        track.style.transform = `translateX(${moveAmount}px)`;
+
+        isAnimating = true;
+
+        // math for moving
+        var slideWidth = track.getBoundingClientRect().width / slidesToShow;
+
+        // var moveAmount = -(targetIndex * slideWidth); // old calculation
+
+        var moveAmount = -(targetIndex * slideWidth);
+
+        track.style.transform = 'translateX(' + moveAmount + 'px)';
         currentIndex = targetIndex;
+
+
         updateProgress();
-        
-        console.log(`Moved to position ${currentIndex + 1}/${totalPages}`);
-        
-        
-        setTimeout(() => {
+
+        // console.log(`Moved to position ${currentIndex + 1}/${totalPages}`);
+
+        // wait for animation
+        setTimeout(function () {
             isAnimating = false;
         }, 500);
     };
 
+
+
     // Event listeners
     nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
+
+        // check bounds
         if (currentIndex < totalPages - 1) {
             moveToSlide(currentIndex + 1);
         } else {
@@ -158,10 +208,10 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('touchend', (e) => {
         if (!isDragging) return;
         isDragging = false;
-        
+
         const diffX = startX - currentX;
         const threshold = 50;
-        
+
         if (Math.abs(diffX) > threshold) {
             if (diffX > 0 && currentIndex < totalPages - 1) {
                 moveToSlide(currentIndex + 1);
@@ -187,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Manual control only - no autoplay
 
-    // Smooth scrolling for anchor links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -196,12 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const header = document.querySelector('.header');
                 const headerHeight = header.offsetHeight;
                 const targetPosition = target.offsetTop - headerHeight - 20;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
+
                 // Update active navigation
                 updateActiveNav(this.getAttribute('href'));
             }
@@ -214,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.header__nav-link').forEach(link => {
             link.classList.remove('header__nav-link--active');
         });
-        
+
         // Add active class to clicked link
         const activeLink = document.querySelector(`a[href="${href}"]`);
         if (activeLink) {
@@ -239,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.forEach(link => {
                     link.classList.remove('header__nav-link--active');
                 });
-                
+
                 const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
                 if (activeLink) {
                     activeLink.classList.add('header__nav-link--active');
@@ -256,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         if (currentScrollY > 100) {
             header.classList.add('header--scrolled');
         } else {
@@ -270,18 +320,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu functionality
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.header__nav');
-    
+
     if (mobileMenuToggle && mobileNav) {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('active');
-            
+
             // Check screen width to determine which class to use
             if (window.innerWidth <= 320) {
                 mobileNav.classList.toggle('mobile-open');
             } else {
                 mobileNav.classList.toggle('active');
             }
-            
+
             document.body.style.overflow = (mobileNav.classList.contains('mobile-open') || mobileNav.classList.contains('active')) ? 'hidden' : '';
         });
 
@@ -317,51 +367,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Partners carousel functionality
+    // TODO: refactor this duplicated code later... maybe?
+
+    // Partners carousel functionality
     const partnersTrack = document.querySelector('.partners__track');
     const partnersPrevBtn = document.querySelector('.partners__prev');
     const partnersNextBtn = document.querySelector('.partners__next');
+
+
     const partnersProgressFill = document.querySelector('.partners__progress-fill');
     const partnersCurrentSlide = document.querySelector('.partners__current');
     const partnersTotalSlides = document.querySelector('.partners__total');
-    
+
     if (partnersTrack && partnersPrevBtn && partnersNextBtn) {
         const partnersSlides = Array.from(partnersTrack.children);
         if (partnersSlides.length > 0) {
             let partnersCurrentIndex = 0;
             const partnersTotalCount = partnersSlides.length;
-            
+
             if (partnersTotalSlides) {
                 partnersTotalSlides.textContent = partnersTotalCount.toString().padStart(2, '0');
             }
-            
+
             function updatePartnersCarousel() {
                 const translateX = -partnersCurrentIndex * 100;
                 partnersTrack.style.transform = `translateX(${translateX}%)`;
-                
+
                 if (partnersCurrentSlide) {
                     partnersCurrentSlide.textContent = (partnersCurrentIndex + 1).toString().padStart(2, '0');
                 }
-                
+
                 if (partnersProgressFill) {
                     const progress = ((partnersCurrentIndex + 1) / partnersTotalCount) * 100;
                     partnersProgressFill.style.width = `${progress}%`;
                 }
             }
-            
+
             partnersPrevBtn.addEventListener('click', () => {
+                // back
                 partnersCurrentIndex = (partnersCurrentIndex - 1 + partnersTotalCount) % partnersTotalCount;
                 updatePartnersCarousel();
             });
-            
+
             partnersNextBtn.addEventListener('click', () => {
+                // go forward
                 partnersCurrentIndex = (partnersCurrentIndex + 1) % partnersTotalCount;
+
+                // console.log("partners loop");
                 updatePartnersCarousel();
             });
-            
+
             // Initialize
             updatePartnersCarousel();
         }
     }
+
 
     // Intersection Observer for animations
     const observerOptions = {
@@ -403,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('mouseenter', () => {
             button.style.transform = 'translateY(-2px)';
         });
-        
+
         button.addEventListener('mouseleave', () => {
             button.style.transform = 'translateY(0)';
         });
@@ -415,12 +475,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 const header = document.querySelector('.header');
                 const headerHeight = header.offsetHeight;
                 const targetPosition = targetElement.offsetTop - headerHeight - 20;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
